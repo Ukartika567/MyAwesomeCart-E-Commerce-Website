@@ -10,7 +10,7 @@ from .Paytm import Checksum
 from django.contrib import messages
 
 # Create your views here.
-MERCHANT_KEY = 'q9OdlbtuSNvWC3cL'
+MERCHANT_KEY = 'Your Merchant Key'
 
 
 def index(request):
