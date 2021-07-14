@@ -1,0 +1,108 @@
+{% extends 'shop/basic.html' %}
+
+{% block title %} checkout {% endblock %}
+
+{% block body %}
+
+<div class="container">
+    <div class="col">
+        <h3 class="">Payment Status regarding your order Id {{response.ORDERID}}</h3>
+        {% if response.RESPCODE == '01' %}
+        ORDER SUCCESS
+        {% else %}
+        ORDER FAILURE
+        {% endif%}
+        
+    </div>
+
+    <div class="container ">
+        <div class="row mx-3 g-5">  
+            <div class="col-md-6">
+            </div>
+    
+            <div class="col-md-4">
+                <div class="position-sticky" style="top: 20rem;">
+                    <div class="p-4 mb-3 bg-light rounded" style="width: 515px;">
+                        <h5 class="fst-italic">Your Order Details</h5>
+                            <table class="table table-success table-striped">
+                                <thead>
+                                    <tr>
+                                        <th>Information</th>
+                                        <th>Details</th>
+                                   </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>ORDER_ID</td>
+                                        <td>{{response.ORDERID}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>MID</td>
+                                        <td>{{response.MID}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>TXNID</td>
+                                        <td>{{response.TXNID}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>TXNAMOUNT</td>
+                                        <td>{{response.TXNAMOUNT}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>PAYMENTMODE</td>
+                                        <td>{{response.PAYMENTMODE}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>CURRENCY</td>
+                                        <td>{{response.CURRENCY}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>TXNDATE</td>
+                                        <td>{{response.TXNDATE}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>STATUS</td>
+                                        <td>{{response.STATUS}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RESPCODE</td>
+                                        <td>{{response.RESPCODE}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>RESPMSG</td>
+                                        <td>{{response.RESPMSG}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>GATEWAYNAME</td>
+                                        <td>{{response.GATEWAYNAME}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>BANKTXNID</td>
+                                        <td>{{response.BANKTXNID}}</td>
+                                    </tr>
+                                    <tr>
+                                        <td>BANKNAME</td>
+                                        <td>{{response.BANKNAME}}</td>
+                                    </tr>
+                                </tbody>
+                              </table>
+                        </div>
+    
+                    
+                </div>
+            </div>
+        </div>
+    </div>
+    
+</div>
+{% endblock %}
+{% block js %}
+<script>
+{% if thank %}
+    alert("Thank for ordering with us. Your order id is {{id}}. Use it to track your order to using or order tracker");
+    localStorage.clear();  
+{% else %}
+     alert('Sorry!Your order has been failed due to the technical issue.!')    
+{% endif %}
+</script>
+{% endblock %}

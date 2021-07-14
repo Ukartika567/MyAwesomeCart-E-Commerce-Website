@@ -1,0 +1,36 @@
+{% extends "blog/basic.html" %}
+{% block blogactive %} active {% endblock %}
+{% block body %}
+    <div class="container mt-3" >
+        <div class="p-4 p-md-5 mb-4 text-white rounded bg-dark">
+          <div class="col-md-6 px-0">
+            <h1 class="display-4 fst-italic">My Awesome Cart featured blog post</h1>
+            <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what’s most interesting in this post’s contents.</p>
+            
+          </div>
+        </div>
+
+        <div class="row mb-2">
+        {% for item in myposts %}
+       
+          <div class="col-md-6">
+            <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
+              <div class="col p-4 d-flex flex-column position-static">
+                <strong class="d-inline-block mb-2 text-primary">Featured Posts</strong>
+                <h3 class="mb-0">{{item.title|safe}}</h3>
+                <div class="mb-1 text-muted">{{item.pub_date}}</div>
+                <p class="card-text mb-auto">{{item.chead0|safe|slice:"0:30"}}....</p>
+                <a href="blogpost/{{item.post_id}}" class="stretched-link"><button class="btn btn-primary">Continue reading</button></a>
+              </div>
+              <div class="col-auto d-none d-lg-block">
+                <img src="/media/{{item.thumbnail}}" class="bd-placeholder-img" width="190" height="280"><title>Placeholder</title><rect width="100%" height="100%" fill="#55595c"></rect><text x="50%" y="50%" fill="#eceeef" dy=".3em"></text></img>
+      
+              </div>
+            </div>
+          </div>
+        {% if forloop.counter|divisibleby:2 %}  
+        </div><div class="row mb-2">
+        {% endif %}
+        {% endfor %}
+    </div>
+    {% endblock %}

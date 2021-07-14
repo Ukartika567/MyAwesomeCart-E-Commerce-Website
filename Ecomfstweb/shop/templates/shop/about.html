@@ -1,0 +1,63 @@
+{% extends 'shop/basic2.html' %}
+
+{% block title %} About Us {% endblock %}
+{% block aboutactive %} active {% endblock %}
+{% block css %}
+.card
+{
+display: inline-block;
+margin-left: 15px;
+}
+.card img{
+  width:290px;
+  height:300px;
+}
+.card-text{
+  font-family:'TimeNewRoman'
+}
+.card-title{
+  font-family:'TimeNewRoman'
+
+}
+{% endblock %}
+
+{% block body %}
+
+
+
+
+<div class="container mt-3" >
+  <div class="p-4 p-md-5 mb-4 text-white rounded bg-dark">
+    <div class="col-md-6 px-0">
+      <h1 class="display-4 fst-italic">MyAwesomeCart latest News</h1>
+      <p class="lead my-3">Here are the  latest news, facts, analysis, and original stories about MAC delivered to you..</p>
+    </div>
+  </div>
+  <div class="row  ml-3" >
+  <div class="card" style="width: 18rem;">
+    <img src="/media/shop/images/download.webp" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">June 23, 2021</h5>
+      <p class="card-text">MAC is the top corporate buyer of renewable energy in the U.S.</p>
+      </div>
+  </div>
+  <div class="card" style="width: 18rem;">
+    <img src="/media/shop/images/download (1).webp" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">June 24 , 2021</h5>
+      <p class="card-text">This MAC leader has every hip-hop lover's dream job.</p>
+          </div>
+  </div>
+  <div class="card" style="width: 18rem;">
+    <img src="/media/shop/images/download (2).webp" class="card-img-top" alt="...">
+    <div class="card-body">
+      <h5 class="card-title">July 1, 2021</h5>
+      <p class="card-text">MAC encourages employees to bike to work ---with a new perk .</p>
+     
+    </div>
+  </div>
+</div>
+
+
+
+{% endblock %}
